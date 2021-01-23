@@ -22,10 +22,11 @@ def run_game():
     # 初始化游戏，并创建一个屏幕对象
     pygame.init()
     setting = Settings()
-    screen = pygame.display.set_mode((setting.screen_width, setting.screen_hight))
-    pygame.display.set_caption('Alien Invasion')
+    screen = pygame.display.set_mode((setting.screen_width, setting.screen_hight))  # 设置游戏屏幕布局尺寸
+    pygame.display.set_caption("Alien Invasion's Game")     # Title
     # 创建一艘飞船
     ship = Ship(screen, setting)
+    # 创建一个外星人
     alien = Alien(screen, setting)
     # 创建一个用于存储子弹的编组
     bullets = Group()

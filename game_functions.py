@@ -54,7 +54,7 @@ def update_screen(setting, screen, ship, bullets, alien):
         screen.fill(setting.bg_color)
         # 在飞船和外星人图片的下面重绘子弹
         for bullet in bullets.sprites():    # bullets.sprites()返回一个列表，其中包括编组bullets中所有精灵
-            bullet.draw_bullet()
+            bullet.draw_bullet()            # 在屏幕上，绘制发射的所有子弹
         ship.blitme()
         alien.blitme()
         # 让最近绘制的屏幕可见，while每次执行时，都绘制一个空屏幕，并擦去旧屏幕
@@ -64,6 +64,6 @@ def update_bullets(bullets):
     """更新子弹的位置，并删除已消失的子弹"""
     bullets.update()        # 将为编组bullets中的每颗子弹调用bullet.update()
     # 删除已消失的子弹
-    for bullet in bullets.copy():
+    for bullet in bullets.copy():       # 不应从列表或编组中删除条目，因此必须遍历编组的副本
         if bullet.rect.bottom <= 0:
             bullets.remove(bullet)

@@ -15,14 +15,14 @@ import pygame
 class Ship():
     def __init__(self, screen, setting):
         """初始化飞船，并设置初始位置"""
-        self.screen = screen
+        self.screen = screen        # 将飞船绘制到屏幕中
         self.setting = setting
         # 加载飞船图像并获取其外接矩形
         self.image = pygame.image.load('images/ship.bmp')
-        self.rect = self.image.get_rect()
+        self.rect = self.image.get_rect()       # 获取属性rect，像处理矩形一样处理图像。
         self.screen_rect = screen.get_rect()    # 表示屏幕的矩形
         # 将每艘飞船放置在底部中央
-        self.rect.centerx = self.screen_rect.centerx
+        self.rect.centerx = self.screen_rect.centerx    # 处理rect对象时，可使用矩形四角和中心的x和y坐标。
         self.rect.bottom = self.screen_rect.bottom
         self.center = float(self.rect.centerx)
         # 移动标志
